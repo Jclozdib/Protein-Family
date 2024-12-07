@@ -1,33 +1,29 @@
-# Python
-FROM python:3.9-slim
+FROM python:3.8-slim
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-# System dependencies + BLAST/HMMER
-RUN apt-get update && apt-get install -y \
-    wget \
-    build-essential \
-    curl \
-    git \
-    blast2 \
-    hmmer \
-    && rm -rf /var/lib/apt/lists/*
-
-# Python libraries
-RUN pip install --no-cache-dir \
-    biopython \
-    pandas \
-    requests
-
-RUN apt-get update && apt-get install -y git
-
-RUN git clone https://github.com/your-username/Protein-family.git /app
-
-# Working directory
 WORKDIR /app
 
-# Copy your local project files into the container's working directory
+RUN apt-get update && \
+    apt-get install -y \
+    wget \
+    build-essential \
+    libz-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN wget http://eddylab.org/software/hmmer/hmmer.tar.gz && \
+    tar -xzf hmmer.tar.gz && \
+    cd hmmer-3.4 && \
+    ./configure && \
+    make && \
+    cd .. && \
+    rm -rf hmmer.tar.gz hmmer-3.4
+
+RUN wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.16.0+-x64-linux.tar.gz && \
+    tar -xzf ncbi-blast-2.16.0+-x64-linux.tar.gz && \
+    rm ncbi-blast-2.16.0+-x64-linux.tar.gz
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . /app
 
-# Set the default command to run your main Python script
 CMD ["python", "main.py"]
