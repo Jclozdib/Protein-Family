@@ -7,6 +7,7 @@ RUN apt-get update && \
     wget \
     build-essential \
     libz-dev \
+    clustal-omega \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget http://eddylab.org/software/hmmer/hmmer.tar.gz && \
