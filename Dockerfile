@@ -29,3 +29,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
+
+COPY workflow.sh /app/
+RUN chmod +x /app/workflow.sh

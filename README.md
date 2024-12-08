@@ -1,7 +1,12 @@
 # Protein-Family
 
-## To be cleaned later:
-## Make sh file with listed commands
+## Automatic workflow:
+1) Run the "workflow" shell script:
+```sh
+./workflow.sh
+```
+
+## Manual step-by-step process:
 
 1) Build and run the docker:
 ```sh
