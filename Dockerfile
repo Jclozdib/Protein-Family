@@ -4,6 +4,7 @@ WORKDIR /app
 
 RUN apt-get update && \
     apt-get install -y \
+    gzip \
     wget \
     build-essential \
     libz-dev \
@@ -20,6 +21,9 @@ RUN wget http://eddylab.org/software/hmmer/hmmer.tar.gz && \
 RUN wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.16.0+-x64-linux.tar.gz && \
     tar -xzf ncbi-blast-2.16.0+-x64-linux.tar.gz && \
     rm ncbi-blast-2.16.0+-x64-linux.tar.gz
+
+RUN wget https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz && \
+    gunzip uniprot_sprot.fasta.gz
 
 RUN apt-get update && apt-get install -y clustalw
 
