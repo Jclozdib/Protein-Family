@@ -16,18 +16,18 @@ with open(blast_results) as result_handle:
                 sequences.append(hsp.sbjct)
 
 # Write the sequences to a new FASTA file
-with open("blastp_hits.fasta", "w") as output_fasta:
+with open("msa.fasta", "w") as output_fasta:
     for idx, seq in enumerate(sequences):
         output_fasta.write(f">sequence_{idx}\n{seq}\n")
 
 # Perform MSA using ClustalW with output in FASTA format
 try:
-    msa_command = ["clustalw", "-INFILE=blastp_hits.fasta", "-OUTFILE=blastp_hits.fasta", "-OUTPUT=FASTA"]
+    msa_command = ["clustalw", "-INFILE=msa.fasta", "-OUTFILE=msa.fasta", "-OUTPUT=FASTA"]
     result = subprocess.run(msa_command, capture_output=True, text=True)
     
     # Check the command output for success/failure
     if result.returncode == 0:
-        print("MSA completed. Results saved in 'blastp_hits.fasta'")
+        print("MSA completed. Results saved in 'msa.fasta'")
     else:
         print(f"Error in MSA execution. stderr: {result.stderr}")
 
