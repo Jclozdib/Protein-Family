@@ -90,14 +90,15 @@ def parse_hmm(file_path):
     df = pd.DataFrame(parsed_rows, columns=columns)
     return df
 
-psiblast_file = "psiblast_full_output.txt"
+psiblast_file = "psiblast_results_domain.txt"
 hmm_file = "hmmer_results_domain.txt"           
 
 # Parse PSI-BLAST and HMM results
 df_psiblast = parse_psiblast(psiblast_file)
 df_hmm = parse_hmm(hmm_file)
 
-# Display sample dataframes
+'''
+For parse testing purposes
 print("PSI-BLAST Results:")
 print(df_psiblast.head())
 
@@ -106,3 +107,32 @@ print(df_hmm.head())
 
 print("\nGround Truth:")
 print(df_gt.head())
+'''
+
+# Ground truth accessions
+ground_truth_accessions = set(df_gt["Protein Accession"])
+
+# Model accessions
+psiblast_accessions = set(df_psiblast["Accession"])
+hmm_accessions = set(df_hmm["Accession"])
+
+# Accession comparison function
+def evaluate_model(model_accessions, ground_truth_accessions):
+    tp = len(model_accessions & ground_truth_accessions)  # True Positives
+    fp = len(model_accessions - ground_truth_accessions)  # False Positives
+    fn = len(ground_truth_accessions - model_accessions)  # False Negatives
+    return tp, fp, fn
+
+psiblast_tp, psiblast_fp, psiblast_fn = evaluate_model(psiblast_accessions, ground_truth_accessions)
+hmm_tp, hmm_fp, hmm_fn = evaluate_model(hmm_accessions, ground_truth_accessions)
+
+results = {
+    "Model": ["PSIBLAST", "HMM"],
+    "TP": [psiblast_tp, hmm_tp],
+    "FP": [psiblast_fp, hmm_fp],
+    "FN": [psiblast_fn, hmm_fn]
+}
+results_df = pd.DataFrame(results)
+
+print("\nComparison Results:")
+print(results_df)
