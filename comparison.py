@@ -112,6 +112,13 @@ print(df_gt.head())
 # Ground truth accessions
 ground_truth_accessions = set(df_gt["Protein Accession"])
 
+output_file = "ground_truth_accessions.txt"
+with open(output_file, "w") as f:
+    for accession in ground_truth_accessions:
+        f.write(f"{accession}\n")
+
+print(f"Ground Truth Accessions saved to {output_file}")
+
 # Model accessions
 psiblast_accessions = set(df_psiblast["Accession"])
 hmm_accessions = set(df_hmm["Accession"])

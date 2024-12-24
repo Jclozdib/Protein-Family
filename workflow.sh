@@ -38,4 +38,22 @@ d sstart send evalue bitscore"
 echo "Running comparison script"
 docker exec pf python comparison.py
 
+# Step 9: Retreive taxonmic lineage
+echo "Running lineage script"
+docker exec pf python lineage.py
+
+# Step 10: Plot and save taxonmic tree
+echo "Running taxonomic tree script"
+docker exec pf python tax_tree.py
+
+# Step : Copy output files to local system
+echo "Copying output files to local system..."
+docker cp pf:/app/model.pssm ./results/
+docker cp pf:/app/model.hmm ./results/
+docker cp pf:/app/hmmer_results_domain.txt ./results/
+docker cp pf:/app/psiblast_results_domain.txt ./results/
+docker cp pf:/app/ground_truth_accessions.txt ./results/
+docker cp pf:/app/lineage.txt ./results/
+docker cp pf:/app/taxonomic_tree.png ./results/
+
 echo "Workflow completed successfully!"

@@ -1,3 +1,6 @@
 biopython
 pandas
 requests
+networkx
+matplotlib
+pygraphviz

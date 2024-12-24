@@ -1,0 +1,27 @@
+Q99VF6	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+Q4L4T4	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus haemolyticus
+Q12723	 cellular organisms -> Eukaryota -> Opisthokonta -> Fungi -> Dikarya -> Ascomycota -> saccharomyceta -> Saccharomycotina -> Saccharomycetes -> Saccharomycetales -> Phaffomycetaceae -> Cyberlindnera
+Q9I4V0	 cellular organisms -> Bacteria -> Pseudomonadota -> Gammaproteobacteria -> Pseudomonadales -> Pseudomonadaceae -> Pseudomonas -> Pseudomonas aeruginosa group -> Pseudomonas aeruginosa
+Q01284	 cellular organisms -> Eukaryota -> Opisthokonta -> Fungi -> Dikarya -> Ascomycota -> saccharomyceta -> Pezizomycotina -> leotiomyceta -> sordariomyceta -> Sordariomycetes -> Sordariomycetidae -> Sordariales -> Sordariaceae -> Neurospora -> Neurospora crassa
+A5IR97	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+Q8NXG7	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+O06179	 cellular organisms -> Bacteria -> Terrabacteria group -> Actinomycetota -> Actinomycetes -> Mycobacteriales -> Mycobacteriaceae -> Mycobacterium -> Mycobacterium tuberculosis complex -> Mycobacterium tuberculosis
+A6U025	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+Q2T4N0	 cellular organisms -> Bacteria -> Pseudomonadota -> Betaproteobacteria -> Burkholderiales -> Burkholderiaceae -> Burkholderia -> pseudomallei group -> Burkholderia thailandensis
+P47177	 cellular organisms -> Eukaryota -> Opisthokonta -> Fungi -> Dikarya -> Ascomycota -> saccharomyceta -> Saccharomycotina -> Saccharomycetes -> Saccharomycetales -> Saccharomycetaceae -> Saccharomyces -> Saccharomyces cerevisiae
+E9F689	 cellular organisms -> Eukaryota -> Opisthokonta -> Fungi -> Dikarya -> Ascomycota -> saccharomyceta -> Pezizomycotina -> leotiomyceta -> sordariomyceta -> Sordariomycetes -> Hypocreomycetidae -> Hypocreales -> Clavicipitaceae -> Metarhizium -> Metarhizium robertsii
+D0V3Y4	 cellular organisms -> Bacteria -> Pseudomonadota -> Gammaproteobacteria -> Pseudomonadales -> Pseudomonadaceae -> Pseudomonas -> unclassified Pseudomonas
+Q6GIG7	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+Q2FIF3	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+A6QFD2	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+Q9HWH9	 cellular organisms -> Bacteria -> Pseudomonadota -> Gammaproteobacteria -> Pseudomonadales -> Pseudomonadaceae -> Pseudomonas -> Pseudomonas aeruginosa group -> Pseudomonas aeruginosa
+Q0S7Q1	 cellular organisms -> Bacteria -> Terrabacteria group -> Actinomycetota -> Actinomycetes -> Mycobacteriales -> Nocardiaceae -> Rhodococcus -> Rhodococcus jostii
+A8Z1H7	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus -> Staphylococcus aureus (strain USA300)
+P71847	 cellular organisms -> Bacteria -> Terrabacteria group -> Actinomycetota -> Actinomycetes -> Mycobacteriales -> Mycobacteriaceae -> Mycobacterium -> Mycobacterium tuberculosis complex -> Mycobacterium tuberculosis
+O05413	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Bacillaceae -> Bacillus -> Bacillus subtilis group -> Bacillus subtilis -> Bacillus subtilis subsp. subtilis
+O34787	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Bacillaceae -> Bacillus -> Bacillus subtilis group -> Bacillus subtilis -> Bacillus subtilis subsp. subtilis
+B2TEK6	 cellular organisms -> Bacteria -> Pseudomonadota -> Betaproteobacteria -> Burkholderiales -> Burkholderiaceae -> Paraburkholderia -> Paraburkholderia phytofirmans
+Q6GB05	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+Q49W60	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus saprophyticus
+Q5HHG4	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
+Q2FZX9	 cellular organisms -> Bacteria -> Terrabacteria group -> Bacillota -> Bacilli -> Bacillales -> Staphylococcaceae -> Staphylococcus -> Staphylococcus aureus
