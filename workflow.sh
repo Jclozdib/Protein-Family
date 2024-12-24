@@ -34,11 +34,26 @@ docker exec pf makeblastdb -in /app/uniprot_sprot.fasta -dbtype prot -out /app/s
 docker exec pf psiblast -db /app/swissprot -in_pssm /app/model.pssm -out /app/psiblast_results_domain.txt -evalue 1e-5 -num_threads 4 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qen
 d sstart send evalue bitscore"
 
+# Step 8: Retrieve domain matches and compare with models
+echo "Running comparison script"
+docker exec pf python comparison.py
+
+# Step 9: Retreive taxonmic lineage
+echo "Running lineage script"
+docker exec pf python lineage.py
+
+# Step 10: Plot and save taxonmic tree
+echo "Running taxonomic tree script"
+docker exec pf python tax_tree.py
+
 # Step : Copy output files to local system
 echo "Copying output files to local system..."
-docker cp pf:/app/model.pssm /home/jclozdib/Protein-family/
-docker cp pf:/app/model.hmm /home/jclozdib/Protein-family/
-docker cp pf:/app/hmmer_results_domain.txt /home/jclozdib/Protein-family/
-docker cp pf:/app/psiblast_results_domain.txt /home/jclozdib/Protein-family/
+docker cp pf:/app/model.pssm ./results/
+docker cp pf:/app/model.hmm ./results/
+docker cp pf:/app/hmmer_results_domain.txt ./results/
+docker cp pf:/app/psiblast_results_domain.txt ./results/
+docker cp pf:/app/ground_truth_accessions.txt ./results/
+docker cp pf:/app/lineage.txt ./results/
+docker cp pf:/app/taxonomic_tree.png ./results/
 
 echo "Workflow completed successfully!"
