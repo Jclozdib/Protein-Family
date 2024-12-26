@@ -4,3 +4,7 @@ requests
 networkx
 matplotlib
 pygraphviz
+cafaeval
+numpy
+scipy
+wordcloud
