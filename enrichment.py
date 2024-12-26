@@ -142,7 +142,7 @@ for go_term in ground_truth["go_term"].unique():
     df["rest_ratio"] = df["rest"] / (df["not_rest"] + 1e-9)
     df["fold"] = df["set_ratio"] / (df["rest_ratio"] + 1e-9)
     # removing go terms that don't show up in swissprot
-    # TODO: cannot do fisher test with negative values/ swissprot might not contain these annotations, hence rest will be negative
+    # Cannot do fisher test with negative values, swissprot might not contain these annotations, hence rest will be negative
     df = df[(df["total"] > 0) & (df["rest"] > 0)]
     results.append(df)
 
