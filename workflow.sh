@@ -46,6 +46,18 @@ docker exec pf python lineage.py
 echo "Running taxonomic tree script"
 docker exec pf python tax_tree.py
 
+# Step 11: Get GO annotations for each proteins
+echo "Running GO annotations script"
+docker exec pf python go_annotation.py
+
+# Step 12: Calculate enrichment for each GO term
+echo "Running enrichment script"
+docker exec pf python enrichment.py
+
+# Step 13: Generate word cloud
+echo "Running word cloud script"
+docker exec pf python word_cloud.py
+
 # Step : Copy output files to local system
 echo "Copying output files to local system..."
 docker cp pf:/app/model.pssm ./results/
@@ -55,5 +67,8 @@ docker cp pf:/app/psiblast_results_domain.txt ./results/
 docker cp pf:/app/ground_truth_accessions.txt ./results/
 docker cp pf:/app/lineage.txt ./results/
 docker cp pf:/app/taxonomic_tree.png ./results/
+docker cp pf:/app/ground_truth_annotations.tsv ./results/
+docker cp pf:/app/enrichment_results.tsv ./results/
+docker cp pf:/app/word_cloud.png ./results/
 
 echo "Workflow completed successfully!"
