@@ -143,3 +143,8 @@ results_df = pd.DataFrame(results)
 
 print("\nComparison Results:")
 print(results_df)
+
+output_file = "comparison_results.txt"
+with open(output_file, "w") as file:
+    file.write("Comparison Results:\n")
+    file.write(results_df.to_string(index=False))

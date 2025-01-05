@@ -60,10 +60,13 @@ docker exec pf python word_cloud.py
 
 # Step : Copy output files to local system
 echo "Copying output files to local system..."
+docker cp pf:/app/blastp_output.xml ./results/
+docker cp pf:/app/msa.fasta ./results/
 docker cp pf:/app/model.pssm ./results/
 docker cp pf:/app/model.hmm ./results/
 docker cp pf:/app/hmmer_results_domain.txt ./results/
 docker cp pf:/app/psiblast_results_domain.txt ./results/
+docker cp pf:/app/comparison_results.txt ./results/
 docker cp pf:/app/ground_truth_accessions.txt ./results/
 docker cp pf:/app/lineage.txt ./results/
 docker cp pf:/app/taxonomic_tree.png ./results/

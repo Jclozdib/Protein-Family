@@ -1,0 +1,4 @@
+Comparison Results:
+   Model  TP  FP  FN
+PSIBLAST  25   0   2
+     HMM  25  89   2
