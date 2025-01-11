@@ -58,6 +58,10 @@ docker exec pf python enrichment.py
 echo "Running word cloud script"
 docker exec pf python word_cloud.py
 
+# Step 14: Get morifs
+echo "Running motifs script"
+docker exec pf python motifs.py
+
 # Step : Copy output files to local system
 echo "Copying output files to local system..."
 docker cp pf:/app/blastp_output.xml ./results/
@@ -73,5 +77,8 @@ docker cp pf:/app/taxonomic_tree.png ./results/
 docker cp pf:/app/ground_truth_annotations.tsv ./results/
 docker cp pf:/app/enrichment_results.tsv ./results/
 docker cp pf:/app/word_cloud.png ./results/
+docker cp pf:/app/motif_matches.txt ./results/
+docker cp pf:/app/true_motif_matches.txt ./results/
+docker cp pf:/app/conserved_motifs_in_family.txt ./results/
 
 echo "Workflow completed successfully!"
