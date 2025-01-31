@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 
 pd.set_option("display.max_columns", None)
 
-# # Download SwissProt XML
+# Download SwissProt XML if needed
 compressed_file = "uniprot_sprot.xml.gz"
 xml_file = "uniprot_sprot.xml"
 url = "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.xml.gz"
@@ -73,7 +73,7 @@ def extract_go_terms_from_xml_iterative(xml_file, go_terms_of_interest):
                                 }
                             go_annotations[go_id]["proteinCount"] += 1
 
-            # Clear the element to free memory
+            # important for memory management
             elem.clear()
 
     return list(go_annotations.values())
@@ -83,7 +83,6 @@ swiss_prot_go_annotations_filename = "swiss_prot_go_annotations.json"
 
 ground_truth = pd.read_csv("ground_truth_annotations.tsv", sep="\t")
 
-# Load the ground truth annotations
 go_terms_of_interest = ground_truth["go_term"].unique()
 
 if not os.path.exists(swiss_prot_go_annotations_filename):
@@ -107,12 +106,10 @@ go_annotation_lookup = {
     annotation["id"]: annotation["proteinCount"] for annotation in go_annotations
 }
 
-# Analyze statistics for each go_term
 results = []
 for go_term in ground_truth["go_term"].unique():
     total_with_term = go_annotation_lookup.get(go_term, 0)
 
-    # Access selected proteins for the current GO term
     selected_proteins = ground_truth.loc[
         ground_truth["go_term"] == go_term, "accession"
     ].tolist()
@@ -137,7 +134,6 @@ for go_term in ground_truth["go_term"].unique():
         }
     )
 
-    # Calculate ratios and fold enrichment
     df["set_ratio"] = df["set"] / (df["not_set"] + 1e-9)
     df["rest_ratio"] = df["rest"] / (df["not_rest"] + 1e-9)
     df["fold"] = df["set_ratio"] / (df["rest_ratio"] + 1e-9)

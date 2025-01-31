@@ -62,7 +62,7 @@ docker exec pf python word_cloud.py
 echo "Running motifs script"
 docker exec pf python motifs.py
 
-# Step : Copy output files to local system
+# Step 15: Copy output files to local system
 echo "Copying output files to local system..."
 docker cp pf:/app/blastp_output.xml ./results/
 docker cp pf:/app/msa.fasta ./results/
